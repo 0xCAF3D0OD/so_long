@@ -6,7 +6,7 @@
 /*   By: kdi-noce <kdi-noce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 13:53:05 by kdi-noce          #+#    #+#             */
-/*   Updated: 2022/02/24 19:03:18 by kdi-noce         ###   ########.fr       */
+/*   Updated: 2022/03/01 10:11:25 by kdi-noce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,16 +87,16 @@ int	manage_height(char *_ber)
 	return (h);
 }
 
-void	init_new_map(char *argv2, t_map *map, t_data *gnl)
+void	init_new_map(char *argv2, t_map *map, t_data *gnl, int line)
 {
 	char		*boucle;
 	int			h;
-	static int	line;
 
-	line = 0;
 	h = manage_height(argv2);
 	map->surf = calloc(h + 1, sizeof (char *));
 	gnl->fd = open(argv2, O_RDONLY);
+	if (gnl->fd == -1 || check_ber(argv2) == 1)
+		(write(2, "ERROR argv\n", 12), exit(1));
 	boucle = get_next_line(gnl->fd);
 	while (boucle)
 	{
@@ -115,15 +115,18 @@ void	init_new_map(char *argv2, t_map *map, t_data *gnl)
 		map->y++;
 	}
 }
+//|| check_ber(argv2) == 1)
 
 void	init_wind(char **argv1, t_map *map, t_data *gnl, t_minlbx *minibx)
 {
-	int	x;
-	int	y;
+	int			x;
+	int			y;
+	static int	line;
 
 	x = 0;
 	y = 0;
-	init_new_map(argv1[1], map, gnl);
+	line = 0;
+	init_new_map(argv1[1], map, gnl, line);
 	while (map->surf[y])
 	{
 		while (map->surf[y][x])

@@ -6,7 +6,7 @@
 /*   By: kdi-noce <kdi-noce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 16:03:38 by kdi-noce          #+#    #+#             */
-/*   Updated: 2022/02/24 19:04:13 by kdi-noce         ###   ########.fr       */
+/*   Updated: 2022/02/25 20:46:56 by kdi-noce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ typedef struct S_data
 }			t_data;
 
 void	init_wind(char **argv1, t_map *map, t_data *gnl, t_minlbx *mlx);
-void	init_new_map(char *argv2, t_map *map, t_data *gnl);
+void	init_new_map(char *argv2, t_map *map, t_data *gnl, int line);
 int		manage_height(char *_ber);
 void	manage_map_in_wind(t_data *gnl, t_minlbx *mlx, int y);
 void	manage_bord(t_map *map, t_data *gnl, int h, int line);
@@ -78,7 +78,7 @@ void	manage_condition(t_data *gnl, char *c, int y);
 void	cep_to_zero(t_data *gnl);
 void	manage_items_door_player(t_map *map, t_data *gnl, int h, int l);
 int		keyhook(int keycode, t_data *gnl);
-void	fonction_de_merde(int keycode, t_data *gnl);
+void	fonction_de_merde(int keycode, t_data *gnl, int mouv);
 int		condition(int keycode, t_data *gnl);
 void	manage_keyhook(t_data *gnl, int x, int y);
 int		what_is_in_the_map(t_data *gnl);
@@ -86,5 +86,6 @@ void	manage_door_open(t_data *gnl, int x, int y);
 void	manage_exit(t_data *gnl, int recept);
 void	ft_close(t_data *gnl, int x, int y);
 int		ft_exit(t_minlbx *mlx);
+int		check_ber(char *argv);
 
 #endif

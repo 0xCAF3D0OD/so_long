@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   check_ber.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdi-noce <kdi-noce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/11 15:21:25 by kdi-noce          #+#    #+#             */
-/*   Updated: 2022/02/25 20:37:22 by kdi-noce         ###   ########.fr       */
+/*   Created: 2022/02/25 17:49:45 by kdi-noce          #+#    #+#             */
+/*   Updated: 2022/02/25 20:49:21 by kdi-noce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+int	check_ber(char *argv)
 {
-	t_map		map;
-	t_data		gnl;
-	t_minlbx	minibx;
-
-	if (argc < 2 || argc > 2)
+	if (!ft_strncmp(argv, "map_1.ber", ft_strlen(argv)))
 		return (0);
-	cep_to_zero(&gnl);
-	minibx.mlx = mlx_init();
-	init_wind(&*argv, &map, &gnl, &minibx);
-	gnl.minibx = &minibx;
-	mlx_key_hook(minibx.mlx_win, keyhook, &gnl);
-	mlx_hook(minibx.mlx_win, 17, 1L, ft_exit, &minibx);
-	mlx_loop(minibx.mlx);
+	else if (!ft_strncmp(argv, "map_2.ber", ft_strlen(argv)))
+		return (0);
+	else if (!ft_strncmp(argv, "map_3.ber", ft_strlen(argv)))
+		return (0);
+	else
+		return (1);
 }
-
-	//_CrtDumpMemoryLeaks();

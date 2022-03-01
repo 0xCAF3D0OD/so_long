@@ -6,7 +6,7 @@
 #    By: kdi-noce <kdi-noce@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/25 13:43:13 by kdi-noce          #+#    #+#              #
-#    Updated: 2022/02/24 18:59:59 by kdi-noce         ###   ########.fr        #
+#    Updated: 2022/02/25 19:08:59 by kdi-noce         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIB2 	= libft/libft.a
 CC 		= gcc
 CFLAG 	= -Wall -Werror -Wextra -g3
 OPTION 	= -c
-SRC		= so_long_anx.c so_long.c so_long_map.c so_long_exit.c so_long_error.c
+SRC		= so_long_anx.c so_long.c so_long_map.c so_long_exit.c so_long_error.c check_ber.c
 OBJ 	= $(SRC:.c=.o)
 
 %.o: %.c

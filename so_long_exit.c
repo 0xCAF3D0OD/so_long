@@ -6,7 +6,7 @@
 /*   By: kdi-noce <kdi-noce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 15:09:48 by kdi-noce          #+#    #+#             */
-/*   Updated: 2022/02/24 19:09:41 by kdi-noce         ###   ########.fr       */
+/*   Updated: 2022/03/01 11:04:40 by kdi-noce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,31 @@ void	ft_close(t_data *gnl, int x, int y)
 {
 	if (gnl->map.surf[y][x] == 'F')
 		exit(1);
+}
+
+void	manage_door_open(t_data *gnl, int x, int y)
+{
+	if (gnl->map.surf[y][x + 1] == 'E')
+	{
+		x++;
+		gnl->map.surf[y][x] = 'F';
+	}
+	if (gnl->map.surf[y][x - 1] == 'E')
+	{
+		x--;
+		gnl->map.surf[y][x] = 'F';
+	}
+	if (gnl->map.surf[y + 1][x] == 'E')
+	{
+		y++;
+		gnl->map.surf[y][x] = 'F';
+	}
+	if (gnl->map.surf[y - 1][x] == 'E')
+	{
+		y--;
+		gnl->map.surf[y][x] = 'F';
+	}
+	ft_close(gnl, x, y);
 }
 
 void	manage_exit(t_data *gnl, int recept)
@@ -34,28 +59,26 @@ void	manage_exit(t_data *gnl, int recept)
 
 int	manage_condition_bord(t_map *map, t_data *gnl, int h, int l)
 {
-	int	max;
-	int	test;
-	int	haut;
+	int	arr[3];
 
-	max = ft_strlen(map->surf[map->y] + 1);
-	test = map->x;
-	haut = map->y;
-	if (test < max)
+	arr[0] = ft_strlen(map->surf[map->y] + 1);
+	arr[1] = map->x;
+	arr[2] = map->y;
+	if (map->surf[1] && arr[0] != (int)ft_strlen(map->surf[map->y - 1] + 1))
 		(write(1, "ERROR\n", 7), exit(1));
-	while (max-- > 0 && test--)
+	while (arr[0]-- > 0 && arr[1]--)
 	{
-		if (map->surf[0][test] != '1')
+		if (map->surf[0][arr[1]] != '1')
 			return (1);
 		if (l == h)
 		{
-			if (map->surf[l - 1][test] != '1')
+			if (map->surf[l - 1][arr[1]] != '1')
 				return (3);
 		}
 	}
 	manage_items_door_player(map, gnl, h, l);
-	max = ft_strlen(map->surf[map->y]);
-	if (map->surf[haut][0] != '1' || map->surf[haut][max - 1] != '1')
+	arr[0] = ft_strlen(map->surf[map->y]);
+	if (map->surf[arr[2]][0] != '1' || map->surf[arr[2]][arr[0] - 1] != '1')
 		return (2);
 	else
 		return (0);
@@ -79,31 +102,4 @@ void	manage_bord(t_map *map, t_data *gnl, int h, int line)
 		if (h == max)
 			(write(1, "ERROR\nthe map can't be squarish", 32), exit(1));
 	}	
-}
-
-// fonction de merde est reliée a la fonction keyhook;
-void	fonction_de_merde(int keycode, t_data *gnl)
-{
-	if (condition(keycode, gnl) == 1)
-	{
-		gnl->perso.yperso--;
-		manage_keyhook(gnl, 0, 100);
-	}
-	if (condition(keycode, gnl) == 2)
-	{
-		gnl->perso.xperso--;
-		manage_keyhook(gnl, 100, 0);
-	}
-	if (condition(keycode, gnl) == 3)
-	{
-		gnl->perso.yperso++;
-		manage_keyhook(gnl, 0, -100);
-	}
-	if (condition(keycode, gnl) == 4)
-	{
-		gnl->perso.xperso++;
-		manage_keyhook(gnl, -100, 0);
-	}
-	if (condition(keycode, gnl) == 5)
-		exit(1);
 }
