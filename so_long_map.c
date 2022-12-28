@@ -115,7 +115,6 @@ void	init_new_map(char *argv2, t_map *map, t_data *gnl, int line)
 		map->y++;
 	}
 }
-//|| check_ber(argv2) == 1)
 
 void	init_wind(char **argv1, t_map *map, t_data *gnl, t_minlbx *minibx)
 {
