@@ -99,3 +99,8 @@
 
 * **Destroys a window** instance accordingly.
   *     mlx_destroy_window(mlx->mlx, mlx->mlx_win);
+  
+## Source
+
+* [42 Docs](https://harm-smits.github.io/42docs/)
+* [subject](https://cdn.intra.42.fr/pdf/pdf/68556/fr.subject.pdf)
