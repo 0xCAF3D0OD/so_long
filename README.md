@@ -1,4 +1,4 @@
-![README_img/wario_head.png](image/README_img/wario_head.png)
+![image/Wario.png](image/Wario.png)
 
 -----
 * **So_long** is the first graphic project of the 42 course.
