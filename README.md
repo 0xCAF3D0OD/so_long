@@ -45,3 +45,12 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [<img src="image/README_img/png/wario.png" width="200">](image/README_img/png/wario.png)
+
+* The Map must contain **1 exit**, at least **1 item** and **1 starting position**.
+* the card must be in `.ber`, valid basic `.ber` card:
+
+  * [<img src="image/README_img/png/map_3.png" width="200">](image/README_img/png/map_3.png)
+
+  * [<img src="image/README_img/png/map_1.png" width="200">](image/README_img/png/map_1.png)
+
+  * [<img src="image/README_img/png/map_2.png" width="200">](image/README_img/png/map_2.png)
