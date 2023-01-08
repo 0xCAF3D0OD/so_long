@@ -13,3 +13,8 @@
 * The player's goal is to **collect all the items** on the map, **then escape**.
 * The `W`, `A`, `S` and `D` keys must be used to move the main character.
 * The player must **not** be able to **move** **within the walls**.
+* For **each movement**, the **total number** of transactions should be **displayed in the
+  shell**.
+
+&nbsp;&nbsp;&nbsp;
+[<img src="image/README_img/movements.png" width="200">](image/README_img/movements.png)
