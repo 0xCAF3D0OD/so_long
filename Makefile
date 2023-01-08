@@ -14,9 +14,14 @@ NAME 	= so_long
 LIB1 	= printf/libftprintf.a
 LIB2 	= libft/libft.a
 CC 		= gcc
-CFLAG 	= -Wall -Werror -Wextra -g3
+#CFLAG 	= -Wall -Werror -Wextra -g3
 OPTION 	= -c
-SRC		= so_long_anx.c so_long.c so_long_map.c so_long_exit.c so_long_error.c check_ber.c
+SRC		= 	so_long_anx.c\
+			so_long.c\
+			so_long_map.c\
+			so_long_exit.c\
+			so_long_error.c\
+			check_ber.c
 OBJ 	= $(SRC:.c=.o)
 
 %.o: %.c
