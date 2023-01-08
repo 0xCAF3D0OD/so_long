@@ -19,8 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10c49e4-fd82-4269-ad92-cb628f108489" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/image/README_img/movements.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/README_img/movements.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/README_img/movements.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +145,7 @@
       <option name="presentableId" value="Default" />
       <updated>1673183843847</updated>
       <workItem from="1673183845116" duration="4000" />
-      <workItem from="1673183871167" duration="2754000" />
+      <workItem from="1673183871167" duration="2904000" />
     </task>
     <servers />
   </component>

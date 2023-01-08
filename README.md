@@ -16,5 +16,5 @@
 * For **each movement**, the **total number** of transactions should be **displayed in the
   shell**.
 
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [<img src="image/README_img/movements.png" width="200">](image/README_img/movements.png)
