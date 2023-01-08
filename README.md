@@ -66,3 +66,13 @@
         101001001010101000100101
         1P0000000C00C000000001C1
         111111111111111111111111
+
+
+<p align="center">
+  <img src="image/mlx.png" width="500" />
+</p>
+
+## Minilibx
+
+* To compile the `mlx`: 
+  *      $(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
