@@ -69,7 +69,33 @@
 
 
 ![image/mlxs.png](image/mlxs.png)
-## Minilibx
 
-* To compile the `mlx`: 
+* To compile the `mlx`.
   *      $(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
+
+* To initialize `MiniLibX` one could do the following.
+
+  *     void	*mlx;
+        mlx = mlx_init();
+
+* **Initializing** a tiny **window** which will stay **open forever**.
+
+  *     mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
+
+  * initiate the window rendering :
+  *     mlx_loop(mlx);
+
+* **Read** from a **file to** an **image object**.
+
+  *     void	*img;
+        char	*relative_path = "./test.xpm";
+        int	img_width;
+        int	img_height;
+
+  *     img = mlx_xpm_file_to_image(mlx, relative_path, &img_width, &img_height);
+
+* Puts an **image** to the given **window instance at location** (x,y).
+  *     mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
+
+* **Destroys a window** instance accordingly.
+  *     mlx_destroy_window(mlx->mlx, mlx->mlx_win);
