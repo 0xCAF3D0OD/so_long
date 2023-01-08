@@ -68,10 +68,7 @@
         111111111111111111111111
 
 
-<p align="center">
-  <img src="image/mlx.png" width="500" />
-</p>
-
+![image/mlxs.png](image/mlxs.png)
 ## Minilibx
 
 * To compile the `mlx`: 
